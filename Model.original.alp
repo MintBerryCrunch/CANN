@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+*************************************************
+	         AnyLogic Project File 
+*************************************************	         
+-->
+<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="6.9.0.201310021228" AlpVersion="6.6.0">
+<Model>
+	<Id>1385105830404</Id>
+	<Name><![CDATA[Model]]></Name>
+	<EngineVersion>6</EngineVersion>
+	<JavaPackageName><![CDATA[model]]></JavaPackageName>
+	<ModelTimeUnit><![CDATA[Minute]]></ModelTimeUnit>
+	<ActiveObjectClasses>
+		<!--   =========   Active Object Class   ========  -->
+		<ActiveObjectClass>
+			<Id>1385105830405</Id>
+			<Name><![CDATA[Main]]></Name>
+			<ClientAreaTopLeft><X>0</X><Y>0</Y></ClientAreaTopLeft>
+			<PresentationTopGroupPersistent>true</PresentationTopGroupPersistent>
+			<IconTopGroupPersistent>true</IconTopGroupPersistent>
+			<Generic>false</Generic>
+			<GenericParameters><![CDATA[T]]></GenericParameters>
+			<GenericParametersLabel><![CDATA[Generic parameters:]]></GenericParametersLabel>
+			<SamplesToKeep>100</SamplesToKeep>
+			<LimitNumberOfArrayElements>false</LimitNumberOfArrayElements>
+			<ElementsLimitValue>100</ElementsLimitValue>
+			<MakeDefaultViewArea>true</MakeDefaultViewArea>
+			<SceneGridColor/>
+			<SceneBackgroundColor/>
+			<AgentProperties>
+	 			<SpaceType>CONTINUOUS</SpaceType>			
+				<EnvironmentDefinesInitialLocation>true</EnvironmentDefinesInitialLocation>
+			</AgentProperties>
+
+			<DatasetsCreationProperties>
+				<AutoCreate>true</AutoCreate>
+				<RecurrenceCode><![CDATA[1]]></RecurrenceCode>
+			</DatasetsCreationProperties>
+
+			<Connectors>
+				<Connector>
+					<Id>1385106229984</Id>
+					<Name><![CDATA[connector]]></Name>
+					<X>180</X><Y>200</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<SourceEmbeddedObject>1385106176586</SourceEmbeddedObject>
+					<SourceConnectableName>out</SourceConnectableName>
+					<Points>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>50</X><Y>0</Y></Point>
+					</Points>
+				</Connector>
+				<Connector>
+					<Id>1385109617835</Id>
+					<Name><![CDATA[connector1]]></Name>
+					<X>180</X><Y>200</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<SourceEmbeddedObject>1385106176586</SourceEmbeddedObject>
+					<SourceConnectableName>out</SourceConnectableName>
+					<TargetEmbeddedObject>1385111987787</TargetEmbeddedObject>
+					<TargetConnectableName>in</TargetConnectableName>
+					<Points>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>220</X><Y>0</Y></Point>
+					</Points>
+				</Connector>
+				<Connector>
+					<Id>1385112003355</Id>
+					<Name><![CDATA[connector2]]></Name>
+					<X>430</X><Y>210</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<SourceEmbeddedObject>1385111987787</SourceEmbeddedObject>
+					<SourceConnectableName>outF</SourceConnectableName>
+					<TargetEmbeddedObject>1385108756451</TargetEmbeddedObject>
+					<TargetConnectableName>in</TargetConnectableName>
+					<Points>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>130</X><Y>20</Y></Point>
+					</Points>
+				</Connector>
+				<Connector>
+					<Id>1385112805832</Id>
+					<Name><![CDATA[connector3]]></Name>
+					<X>430</X><Y>190</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<SourceEmbeddedObject>1385111987787</SourceEmbeddedObject>
+					<SourceConnectableName>outT</SourceConnectableName>
+					<TargetEmbeddedObject>1385108756451</TargetEmbeddedObject>
+					<TargetConnectableName>in</TargetConnectableName>
+					<Points>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>130</X><Y>40</Y></Point>
+					</Points>
+				</Connector>
+			</Connectors>
+			<EmbeddedObjects>
+				<EmbeddedObject>
+					<Id>1385106176586</Id>
+					<Name><![CDATA[NewVM]]></Name>
+					<X>140</X><Y>190</Y>
+					<Label><X>-2</X><Y>-11</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<PresentationId>1385110801544</PresentationId>
+					<ActiveObjectClass>
+						<PackageName><![CDATA[com.xj.anylogic.libraries.enterprise]]></PackageName>
+						<ClassName><![CDATA[Source]]></ClassName>
+					</ActiveObjectClass>
+					<GenericParametersSubstitute><![CDATA[VirMachine]]></GenericParametersSubstitute>
+					<Parameters>
+						<Parameter>
+							<Name><![CDATA[arrivalType]]></Name>
+							<Value><![CDATA[Source.MANUAL]]></Value>	
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[rate]]></Name>
+							<Value><![CDATA[]]></Value>	
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[interarrivalTime]]></Name>
+							<Value><![CDATA[]]></Value>	
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[rateSchedule]]></Name>
+							<Value><![CDATA[]]></Value>	
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[rateTable]]></Name>
+							<Value><![CDATA[]]></Value>	
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[arrivalSchedule]]></Name>
+							<Value><![CDATA[]]></Value>	
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[arrivalTable]]></Name>
+							<Value><![CDATA[]]></Value>	
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[modifyRate]]></Name>
+							<Value><![CDATA[]]></Value>	
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[rateExpression]]></Name>
+							<Value><![CDATA[]]></Value>	
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[entitiesPerArrival]]></Name>
+							<Value><![CDATA[]]></Value>	
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[limitArrivals]]></Name>
+							<Value><![CDATA[]]></Value>	
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[maxArrivals]]></Name>
+							<Value><![CDATA[]]></Value>	
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[newEntity]]></Name>
+							<Value><![CDATA[new VirMachine()]]></Value>	
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onExit]]></Name>
+							<Value><![CDATA[]]></Value>	
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[entityShape]]></Name>
+							<Value><![CDATA[]]></Value>	
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[uniqueShape]]></Name>
+							<Value><![CDATA[]]></Value>	
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[enableRotation]]></Name>
+							<Value><![CDATA[]]></Value>	
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[enableVerticalRotation]]></Name>
+							<Value><![CDATA[]]></Value>	
+						</Parameter>
+					</Parameters>
+					<CollectionType>ARRAY_LIST_BASED</CollectionType>
+				</EmbeddedObject>
+				<EmbeddedObject>
+					<Id>1385108756451</Id>
+					<Name><![CDATA[sink]]></Name>
+					<X>560</X><Y>220</Y>
+					<Label><X>7</X><Y>-10</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<ActiveObjectClass>
+						<PackageName><![CDATA[com.xj.anylogic.libraries.enterprise]]></PackageName>
+						<ClassName><![CDATA[Sink]]></ClassName>
+					</ActiveObjectClass>
+					<GenericParametersSubstitute><![CDATA[Entity]]></GenericParametersSubstitute>
+					<Parameters>
+						<Parameter>
+							<Name><![CDATA[onEnter]]></Name>
+							<Value><![CDATA[]]></Value>	
+						</Parameter>
+					</Parameters>
+					<CollectionType>ARRAY_LIST_BASED</CollectionType>
+				</EmbeddedObject>
+				<EmbeddedObject>
+					<Id>1385111987787</Id>
+					<Name><![CDATA[selectOutput]]></Name>
+					<X>400</X><Y>170</Y>
+					<Label><X>-24</X><Y>-3</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<ActiveObjectClass>
+						<PackageName><![CDATA[com.xj.anylogic.libraries.enterprise]]></PackageName>
+						<ClassName><![CDATA[SelectOutput]]></ClassName>
+					</ActiveObjectClass>
+					<GenericParametersSubstitute><![CDATA[VirMachine]]></GenericParametersSubstitute>
+					<Parameters>
+						<Parameter>
+							<Name><![CDATA[conditionIsProbabilistic]]></Name>
+							<Value><![CDATA[false]]></Value>	
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[condition]]></Name>
+							<Value><![CDATA[entity.coof>400]]></Value>	
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[probability]]></Name>
+							<Value><![CDATA[]]></Value>	
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onEnter]]></Name>
+							<Value><![CDATA[]]></Value>	
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onExitTrue]]></Name>
+							<Value><![CDATA[]]></Value>	
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onExitFalse]]></Name>
+							<Value><![CDATA[]]></Value>	
+						</Parameter>
+					</Parameters>
+					<CollectionType>ARRAY_LIST_BASED</CollectionType>
+				</EmbeddedObject>
+			</EmbeddedObjects>
+
+			<Shapes>
+				<EmbeddedObjectPresentation>
+					<Id>1385110801544</Id>
+					<Name><![CDATA[NewVM_Презентация]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<AsObject>true</AsObject>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Lock>false</Lock>
+					<ShowIn3D>false</ShowIn3D>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+				</EmbeddedObjectPresentation>
+			</Shapes>
+		</ActiveObjectClass>
+	</ActiveObjectClasses>
+	<Experiments>	
+		<!--   =========   Simulation Experiment   ========  -->
+		<SimulationExperiment ActiveObjectClassId="1385105830405">
+			<Id>1385105830407</Id>
+			<Name><![CDATA[Simulation]]></Name>
+			<ClientAreaTopLeft><X>0</X><Y>0</Y></ClientAreaTopLeft>
+			<PresentationTopGroupPersistent>true</PresentationTopGroupPersistent>
+			<IconTopGroupPersistent>true</IconTopGroupPersistent>
+			<Frame>
+				<X>0</X>
+				<Y>0</Y>
+				<Width>800</Width>
+				<Height>600</Height>
+				<Maximized>false</Maximized>
+				<CloseConfirmation>false</CloseConfirmation>
+			</Frame>
+			<CommandLineArguments><![CDATA[]]></CommandLineArguments>
+			<MaximumMemory>64</MaximumMemory>
+			<RandomNumberGenerationType>randomSeed</RandomNumberGenerationType>
+			<CustomGeneratorCode>new Random()</CustomGeneratorCode>
+			<SeedValue>1</SeedValue>
+			<RandomSelectionModeForSimultaneousEvents>false</RandomSelectionModeForSimultaneousEvents>
+			<VmArgs><![CDATA[]]></VmArgs>
+			<AbsoluteAccuracy>1.0E-5</AbsoluteAccuracy>
+			<RelativeAccuracy>1.0E-5</RelativeAccuracy>
+			<TimeAccuracy>1.0E-5</TimeAccuracy>
+			<FixedTimeStep>0.0010</FixedTimeStep>
+			<LoadRootFromSnapshot>false</LoadRootFromSnapshot>
+			<SnapshotFile></SnapshotFile>
+			<DiffEquationsNumericalMethod>EULER</DiffEquationsNumericalMethod>
+			<MixedEquationsNumericalMethod>RK45_NEWTON</MixedEquationsNumericalMethod>
+			<AlgebraicEquationsNumericalMethod>MODIFIED_NEWTON</AlgebraicEquationsNumericalMethod>
+
+			<Shapes>
+				<Text>
+					<Id>1385105830408</Id>
+					<Name><![CDATA[text]]></Name>
+					<X>40</X><Y>30</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<AsObject>true</AsObject>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Lock>false</Lock>
+					<ShowIn3D>false</ShowIn3D>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[Model]]></Text>
+					<Font>
+						<Name>Serif</Name>
+						<Size>28</Size>
+						<Style>1</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1385105830409</Id>
+					<Name><![CDATA[text1]]></Name>
+					<X>40</X><Y>63</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<AsObject>true</AsObject>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Lock>false</Lock>
+					<ShowIn3D>false</ShowIn3D>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[Страница настроек эксперимента]]></Text>
+					<Font>
+						<Name>Serif</Name>
+						<Size>16</Size>
+						<Style>2</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+			</Shapes>
+			<Controls>
+				<Control Type="Button">
+				 	<EmbeddedIcon>false</EmbeddedIcon>				
+					<Id>1385105830410</Id>
+					<Name><![CDATA[button]]></Name>
+					<X>40</X><Y>120</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<BasicProperties Width="320" Height="30" 
+				AsObject="true">
+                        <EmbeddedIcon>false</EmbeddedIcon>				
+						<FillColor/>
+						<TextColor/>
+						<ActionCode><![CDATA[if ( getState() == IDLE )
+	run();
+getPresentation().setPresentable( getEngine().getRoot() );]]></ActionCode>
+					</BasicProperties>
+					<ExtendedProperties>
+						<Font Name="Dialog" Size="11" Style="0"/>
+						<LabelText><![CDATA[Запустить модель и открыть презентацию класса Main]]></LabelText>
+						<LabelCode><![CDATA[getState() == IDLE ?
+	"Запустить модель и открыть презентацию класса Main" :
+	"Открыть презентацию класса Main"]]></LabelCode>
+					</ExtendedProperties>
+				</Control>
+			</Controls>
+			<Parameters>			
+			</Parameters>			
+			<PresentationProperties 
+				EnableAdaptiveFrameManagement="true" 
+				EnableAntiAliasing="true"
+				EnableEnhancedModelElementsAnimation="true"
+				EnablePanning="true"
+				ToolbarCustomizableAtRuntime="true"
+				EnableZoom="true">
+				<ExecutionMode><![CDATA[realTimeScaled]]></ExecutionMode>
+				<CpuRatio><![CDATA[ratio_1_2]]></CpuRatio>	        
+				<Title><![CDATA[Model : Simulation]]></Title>	
+				<FramesPerSecond><![CDATA[20.0]]></FramesPerSecond>
+				<RealTimeScale>1.0</RealTimeScale>
+				<UIProperty Name="Experiment Progress" Value="false"/>
+				<UIProperty Name="Simulation Progress" Value="true"/>
+				<UIProperty Name="Statusbar Events Per Second" Value="false"/>
+				<UIProperty Name="Statusbar Frames Per Second" Value="false"/>
+				<UIProperty Name="Statusbar Memory" Value="true"/>
+				<UIProperty Name="Statusbar Model Date" Value="false"/>
+				<UIProperty Name="Statusbar Model Step" Value="false"/>
+				<UIProperty Name="Statusbar Model Time" Value="true"/>
+				<UIProperty Name="Statusbar Real Time Of Simulation" Value="false"/>
+				<UIProperty Name="Statusbar Status" Value="true"/>
+				<UIProperty Name="Toolbar Animation setup" Value="false"/>
+				<UIProperty Name="Toolbar Execution control" Value="true"/>
+				<UIProperty Name="Toolbar File" Value="false"/>
+				<UIProperty Name="Toolbar Model navigation" Value="true"/>
+				<UIProperty Name="Toolbar Time scale setup" Value="true"/>
+				<UIProperty Name="Toolbar View" Value="false"/>
+			</PresentationProperties>
+			<ModelTimeProperties 
+				UseCalendar="false">
+				<StopOption><![CDATA[Never]]></StopOption>
+				<InitialDate><![CDATA[1385105830404]]></InitialDate>	
+				<InitialTime><![CDATA[0.0]]></InitialTime>	
+				<FinalDate><![CDATA[1385111830404]]></FinalDate>	
+				<FinalTime><![CDATA[100.0]]></FinalTime>	
+			</ModelTimeProperties>
+		</SimulationExperiment>	
+	</Experiments>
+	<JavaClasses>
+		<!--   =========   Java Class   ========  -->
+		<JavaClass>
+			<Id>1385111798292</Id>
+			<Name><![CDATA[VirMachine]]></Name>
+			<Text><![CDATA[/**
+ * VirMachine
+ */	
+public class VirMachine extends com.xj.anylogic.libraries.enterprise.Entity implements java.io.Serializable {
+
+	public int coof = 1;
+	
+
+    /**
+     * Конструктор по умолчанию
+     */
+    public VirMachine(){
+
+    	this.coof = 1 +(int)(Math.random()*1000);
+    }
+
+    /**
+     * Конструктор, инициализирующий поля
+     */     
+    public VirMachine(int coof){
+		this.coof = coof;
+    }     
+	
+	@Override
+	public String toString() {
+		return  
+			"coof = " + coof +" ";
+	}
+
+	/**
+	 * Это число используется при сохранении состояния модели<br>
+	 * Его рекомендуется изменить в случае изменения класса
+	 */ 
+	private static final long serialVersionUID = 1L;
+
+}]]></Text>
+		</JavaClass>
+	</JavaClasses>
+    <RequiredLibraryReference>
+		<LibraryName><![CDATA[com.xj.anylogic.libraries.enterprise]]></LibraryName>
+		<VersionMajor>6</VersionMajor>
+		<VersionMinor>0</VersionMinor>
+		<VersionBuild>3</VersionBuild>
+    </RequiredLibraryReference>
+</Model>
+</AnyLogicWorkspace>
