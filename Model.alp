@@ -28,6 +28,12 @@
 			<ClientAreaTopLeft><X>0</X><Y>0</Y></ClientAreaTopLeft>
 			<PresentationTopGroupPersistent>true</PresentationTopGroupPersistent>
 			<IconTopGroupPersistent>true</IconTopGroupPersistent>
+			<StartupCode><![CDATA[unitsArray.clear();
+unitsArray.add(firstUnit);
+unitsArray.add(secondUnit);
+unitsArray.add(thirdUnit);
+unitsArray.add(fouthUnit);
+unitsArray.add(fifthUnit);]]></StartupCode>
 			<Generic>false</Generic>
 			<GenericParameters><![CDATA[T]]></GenericParameters>
 			<GenericParametersLabel><![CDATA[Generic parameters:]]></GenericParametersLabel>
@@ -113,6 +119,19 @@
 						<InitialValue><![CDATA[new ComputingUnit()]]></InitialValue>                 	
 					</Properties>
 				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1386853998977</Id>
+					<Name><![CDATA[manager]]></Name>
+					<X>1010</X><Y>520</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="true">
+						<Type><![CDATA[Manager]]></Type>        
+						<InitialValue><![CDATA[new Manager ()]]></InitialValue>                 	
+					</Properties>
+				</Variable>
 				<Variable Class="CollectionVariable">
 					<Id>1385375673154</Id>
 					<Name><![CDATA[virtualMachinesList]]></Name>
@@ -143,29 +162,27 @@
 					</Properties>
 
 				</Variable>
+				<Variable Class="CollectionVariable">
+					<Id>1386849572313</Id>
+					<Name><![CDATA[virtualMachinesLost]]></Name>
+					<X>870</X><Y>570</Y>
+					<Label><X>15</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="true">
+						<CollectionClass><![CDATA[java.util.ArrayList]]></CollectionClass>
+						<ElementClass><![CDATA[VirtualMachine]]></ElementClass>
+						<ValueElementClass><![CDATA[String]]></ValueElementClass>
+					</Properties>
+
+				</Variable>
 			</Variables>
 			<Connectors>
 				<Connector>
-					<Id>1385360588591</Id>
-					<Name><![CDATA[connector1]]></Name>
-					<X>60</X><Y>570</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<SourceEmbeddedObject>1385360588557</SourceEmbeddedObject>
-					<SourceConnectableName>out</SourceConnectableName>
-					<TargetEmbeddedObject>1385360588575</TargetEmbeddedObject>
-					<TargetConnectableName>in</TargetConnectableName>
-					<Points>
-						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>220</X><Y>0</Y></Point>
-					</Points>
-				</Connector>
-				<Connector>
 					<Id>1385363669135</Id>
 					<Name><![CDATA[connector2]]></Name>
-					<X>310</X><Y>570</Y>
+					<X>380</X><Y>560</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -176,13 +193,13 @@
 					<TargetConnectableName>in</TargetConnectableName>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>130</X><Y>30</Y></Point>
+						<Point><X>60</X><Y>30</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
 					<Id>1385363688994</Id>
 					<Name><![CDATA[connector3]]></Name>
-					<X>310</X><Y>585</Y>
+					<X>380</X><Y>575</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -193,13 +210,13 @@
 					<TargetConnectableName>in</TargetConnectableName>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>130</X><Y>15</Y></Point>
+						<Point><X>60</X><Y>15</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
 					<Id>1385363698963</Id>
 					<Name><![CDATA[connector4]]></Name>
-					<X>310</X><Y>600</Y>
+					<X>380</X><Y>590</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -210,13 +227,13 @@
 					<TargetConnectableName>in</TargetConnectableName>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>130</X><Y>0</Y></Point>
+						<Point><X>60</X><Y>0</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
 					<Id>1385363707746</Id>
 					<Name><![CDATA[connector5]]></Name>
-					<X>310</X><Y>615</Y>
+					<X>380</X><Y>605</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -227,13 +244,13 @@
 					<TargetConnectableName>in</TargetConnectableName>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>130</X><Y>-15</Y></Point>
+						<Point><X>60</X><Y>-15</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
 					<Id>1385363715748</Id>
 					<Name><![CDATA[connector6]]></Name>
-					<X>310</X><Y>630</Y>
+					<X>380</X><Y>620</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -244,7 +261,75 @@
 					<TargetConnectableName>in</TargetConnectableName>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>130</X><Y>-30</Y></Point>
+						<Point><X>60</X><Y>-30</Y></Point>
+					</Points>
+				</Connector>
+				<Connector>
+					<Id>1386848041787</Id>
+					<Name><![CDATA[connector]]></Name>
+					<X>100</X><Y>570</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<SourceEmbeddedObject>1385360588557</SourceEmbeddedObject>
+					<SourceConnectableName>out</SourceConnectableName>
+					<TargetEmbeddedObject>1386848709575</TargetEmbeddedObject>
+					<TargetConnectableName>in</TargetConnectableName>
+					<Points>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>70</X><Y>0</Y></Point>
+					</Points>
+				</Connector>
+				<Connector>
+					<Id>1386848895448</Id>
+					<Name><![CDATA[connector1]]></Name>
+					<X>280</X><Y>560</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<SourceEmbeddedObject>1386848861424</SourceEmbeddedObject>
+					<SourceConnectableName>outT</SourceConnectableName>
+					<TargetEmbeddedObject>1385360588575</TargetEmbeddedObject>
+					<TargetConnectableName>in</TargetConnectableName>
+					<Points>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>70</X><Y>0</Y></Point>
+					</Points>
+				</Connector>
+				<Connector>
+					<Id>1386848924058</Id>
+					<Name><![CDATA[connector7]]></Name>
+					<X>220</X><Y>570</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<SourceEmbeddedObject>1386848709575</SourceEmbeddedObject>
+					<SourceConnectableName>out</SourceConnectableName>
+					<TargetEmbeddedObject>1386848861424</TargetEmbeddedObject>
+					<TargetConnectableName>in</TargetConnectableName>
+					<Points>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>30</X><Y>0</Y></Point>
+					</Points>
+				</Connector>
+				<Connector>
+					<Id>1386848931546</Id>
+					<Name><![CDATA[connector8]]></Name>
+					<X>280</X><Y>580</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<SourceEmbeddedObject>1386848861424</SourceEmbeddedObject>
+					<SourceConnectableName>outF</SourceConnectableName>
+					<TargetEmbeddedObject>1386848914823</TargetEmbeddedObject>
+					<TargetConnectableName>in</TargetConnectableName>
+					<Points>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>90</X><Y>80</Y></Point>
 					</Points>
 				</Connector>
 			</Connectors>
@@ -252,7 +337,7 @@
 				<EmbeddedObject>
 					<Id>1385360588557</Id>
 					<Name><![CDATA[NewVM]]></Name>
-					<X>20</X><Y>560</Y>
+					<X>60</X><Y>560</Y>
 					<Label><X>-2</X><Y>-11</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -313,7 +398,7 @@
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[newEntity]]></Name>
-							<Value><![CDATA[new VirtualMachine((float)slider.value,(float)slider1.value,(float)slider2.value)]]></Value>	
+							<Value><![CDATA[new VirtualMachine((int)slider.value,(int)slider1.value,(int)slider2.value)]]></Value>	
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
@@ -341,7 +426,7 @@
 				<EmbeddedObject>
 					<Id>1385360588573</Id>
 					<Name><![CDATA[sink]]></Name>
-					<X>440</X><Y>590</Y>
+					<X>440</X><Y>580</Y>
 					<Label><X>7</X><Y>-10</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -362,7 +447,7 @@
 				<EmbeddedObject>
 					<Id>1385360588575</Id>
 					<Name><![CDATA[selectOutput5]]></Name>
-					<X>280</X><Y>560</Y>
+					<X>350</X><Y>550</Y>
 					<Label><X>-24</X><Y>-10</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -379,12 +464,12 @@
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onEnter]]></Name>
-							<Value><![CDATA[text18.setText((int)virtualMachinesList.size());
-virtualMachinesList.add(entity);]]></Value>	
+							<Value><![CDATA[]]></Value>	
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[condition0]]></Name>
-							<Value><![CDATA[entity.cPU >50]]></Value>	
+							<Value><![CDATA[entity.cUCount == 0
+]]></Value>	
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[probability0]]></Name>
@@ -392,11 +477,14 @@ virtualMachinesList.add(entity);]]></Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onExit0]]></Name>
-							<Value><![CDATA[]]></Value>	
+							<Value><![CDATA[firstUnit.addNewVirtualMachine(entity);
+text20.setText("VM go to firshUnit");
+text21.setText(firstUnit.virtualMachines);
+]]></Value>	
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[condition1]]></Name>
-							<Value><![CDATA[]]></Value>	
+							<Value><![CDATA[entity.cUCount == 1]]></Value>	
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[probability1]]></Name>
@@ -404,11 +492,13 @@ virtualMachinesList.add(entity);]]></Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onExit1]]></Name>
-							<Value><![CDATA[]]></Value>	
+							<Value><![CDATA[secondUnit.addNewVirtualMachine(entity);
+text20.setText("VM go to secondUnit");
+text19.setText(secondUnit.virtualMachines);]]></Value>	
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[condition2]]></Name>
-							<Value><![CDATA[]]></Value>	
+							<Value><![CDATA[entity.cUCount == 2]]></Value>	
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[probability2]]></Name>
@@ -416,11 +506,13 @@ virtualMachinesList.add(entity);]]></Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onExit2]]></Name>
-							<Value><![CDATA[]]></Value>	
+							<Value><![CDATA[thirdUnit.addNewVirtualMachine(entity);
+text20.setText("VM go to thirdUnit");
+text24.setText(thirdUnit.virtualMachines);]]></Value>	
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[condition3]]></Name>
-							<Value><![CDATA[]]></Value>	
+							<Value><![CDATA[entity.cUCount == 3]]></Value>	
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[probability3]]></Name>
@@ -428,7 +520,9 @@ virtualMachinesList.add(entity);]]></Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onExit3]]></Name>
-							<Value><![CDATA[]]></Value>	
+							<Value><![CDATA[fouthUnit.addNewVirtualMachine(entity);
+text20.setText("VM go to fouthUnit");
+text23.setText(fouthUnit.virtualMachines);]]></Value>	
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[probability4]]></Name>
@@ -436,10 +530,156 @@ virtualMachinesList.add(entity);]]></Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onExitDefault]]></Name>
-							<Value><![CDATA[]]></Value>	
+							<Value><![CDATA[fifthUnit.addNewVirtualMachine(entity);
+text20.setText("VM go to fifthUnit");
+text22.setText(fifthUnit.virtualMachines);]]></Value>	
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onExit4]]></Name>
+							<Value><![CDATA[]]></Value>	
+						</Parameter>
+					</Parameters>
+					<Replication><![CDATA[2
+]]></Replication>	
+					<CollectionType>ARRAY_LIST_BASED</CollectionType>
+				</EmbeddedObject>
+				<EmbeddedObject>
+					<Id>1386848709575</Id>
+					<Name><![CDATA[queue]]></Name>
+					<X>170</X><Y>540</Y>
+					<Label><X>3</X><Y>-2</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<ActiveObjectClass>
+						<PackageName><![CDATA[com.xj.anylogic.libraries.enterprise]]></PackageName>
+						<ClassName><![CDATA[Queue]]></ClassName>
+					</ActiveObjectClass>
+					<GenericParametersSubstitute><![CDATA[VirtualMachine]]></GenericParametersSubstitute>
+					<Parameters>
+						<Parameter>
+							<Name><![CDATA[capacity]]></Name>
+							<Value><![CDATA[]]></Value>	
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[maximumCapacity]]></Name>
+							<Value><![CDATA[]]></Value>	
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onEnter]]></Name>
+							<Value><![CDATA[text18.setText((int)virtualMachinesList.size());
+entity.goToRandomUnit(unitsArray);]]></Value>	
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onAtExit]]></Name>
+							<Value><![CDATA[]]></Value>	
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onExit]]></Name>
+							<Value><![CDATA[]]></Value>	
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[enableTimeout]]></Name>
+							<Value><![CDATA[]]></Value>	
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[timeout]]></Name>
+							<Value><![CDATA[]]></Value>	
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onExitTimeout]]></Name>
+							<Value><![CDATA[]]></Value>	
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[enablePreemption]]></Name>
+							<Value><![CDATA[]]></Value>	
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[priority]]></Name>
+							<Value><![CDATA[]]></Value>	
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onExitPreempted]]></Name>
+							<Value><![CDATA[]]></Value>	
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[animationGuide]]></Name>
+							<Value><![CDATA[]]></Value>	
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[animationType]]></Name>
+							<Value><![CDATA[]]></Value>	
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[animationForward]]></Name>
+							<Value><![CDATA[]]></Value>	
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[enableStats]]></Name>
+							<Value><![CDATA[]]></Value>	
+						</Parameter>
+					</Parameters>
+					<CollectionType>ARRAY_LIST_BASED</CollectionType>
+				</EmbeddedObject>
+				<EmbeddedObject>
+					<Id>1386848861424</Id>
+					<Name><![CDATA[selectOutput]]></Name>
+					<X>250</X><Y>540</Y>
+					<Label><X>-24</X><Y>-3</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<ActiveObjectClass>
+						<PackageName><![CDATA[com.xj.anylogic.libraries.enterprise]]></PackageName>
+						<ClassName><![CDATA[SelectOutput]]></ClassName>
+					</ActiveObjectClass>
+					<GenericParametersSubstitute><![CDATA[VirtualMachine
+]]></GenericParametersSubstitute>
+					<Parameters>
+						<Parameter>
+							<Name><![CDATA[conditionIsProbabilistic]]></Name>
+							<Value><![CDATA[false]]></Value>	
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[condition]]></Name>
+							<Value><![CDATA[entity.cUCount>-1]]></Value>	
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[probability]]></Name>
+							<Value><![CDATA[]]></Value>	
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onEnter]]></Name>
+							<Value><![CDATA[]]></Value>	
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onExitTrue]]></Name>
+							<Value><![CDATA[virtualMachinesList.add(entity);]]></Value>	
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onExitFalse]]></Name>
+							<Value><![CDATA[text20.setText("VM CANT BE CREATED");
+virtualMachinesLost.add(entity);]]></Value>	
+						</Parameter>
+					</Parameters>
+					<CollectionType>ARRAY_LIST_BASED</CollectionType>
+				</EmbeddedObject>
+				<EmbeddedObject>
+					<Id>1386848914823</Id>
+					<Name><![CDATA[sink1]]></Name>
+					<X>370</X><Y>650</Y>
+					<Label><X>7</X><Y>-10</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<ActiveObjectClass>
+						<PackageName><![CDATA[com.xj.anylogic.libraries.enterprise]]></PackageName>
+						<ClassName><![CDATA[Sink]]></ClassName>
+					</ActiveObjectClass>
+					<GenericParametersSubstitute><![CDATA[Entity]]></GenericParametersSubstitute>
+					<Parameters>
+						<Parameter>
+							<Name><![CDATA[onEnter]]></Name>
 							<Value><![CDATA[]]></Value>	
 						</Parameter>
 					</Parameters>
@@ -523,7 +763,7 @@ virtualMachinesList.add(entity);]]></Value>
 				<Text>
 					<Id>1385360436519</Id>
 					<Name><![CDATA[text3]]></Name>
-					<X>270</X><Y>200</Y>
+					<X>180</X><Y>210</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -547,7 +787,7 @@ virtualMachinesList.add(entity);]]></Value>
 				<Text>
 					<Id>1385360436534</Id>
 					<Name><![CDATA[text4]]></Name>
-					<X>270</X><Y>250</Y>
+					<X>180</X><Y>260</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -571,7 +811,7 @@ virtualMachinesList.add(entity);]]></Value>
 				<Text>
 					<Id>1385360436536</Id>
 					<Name><![CDATA[text5]]></Name>
-					<X>270</X><Y>300</Y>
+					<X>180</X><Y>310</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -585,77 +825,6 @@ virtualMachinesList.add(entity);]]></Value>
 					<Color>-16777216</Color>
 					<Text><![CDATA[I/O
 ]]></Text>
-					<Font>
-						<Name>SansSerif</Name>
-						<Size>10</Size>
-						<Style>0</Style>
-					</Font>
-					<Alignment>LEFT</Alignment>
-				</Text>
-				<Text>
-					<Id>1385361309388</Id>
-					<Name><![CDATA[CPU2]]></Name>
-					<X>370</X><Y>200</Y>
-					<Label><X>0</X><Y>-10</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<AsObject>true</AsObject>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Lock>false</Lock>
-					<ShowIn3D>false</ShowIn3D>
-					<Z>0</Z>
-					<Rotation>0.0</Rotation>
-					<Color>-16777216</Color>
-					<Text><![CDATA[
-
-]]></Text>
-					<Font>
-						<Name>SansSerif</Name>
-						<Size>10</Size>
-						<Style>0</Style>
-					</Font>
-					<Alignment>LEFT</Alignment>
-				</Text>
-				<Text>
-					<Id>1385361961140</Id>
-					<Name><![CDATA[memory2]]></Name>
-					<X>370</X><Y>250</Y>
-					<Label><X>0</X><Y>-10</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<AsObject>true</AsObject>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Lock>false</Lock>
-					<ShowIn3D>false</ShowIn3D>
-					<Z>0</Z>
-					<Rotation>0.0</Rotation>
-					<Color>-16777216</Color>
-					<Text><![CDATA[]]></Text>
-					<Font>
-						<Name>SansSerif</Name>
-						<Size>10</Size>
-						<Style>0</Style>
-					</Font>
-					<Alignment>LEFT</Alignment>
-				</Text>
-				<Text>
-					<Id>1385362113372</Id>
-					<Name><![CDATA[input2]]></Name>
-					<X>370</X><Y>300</Y>
-					<Label><X>0</X><Y>-10</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<AsObject>true</AsObject>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Lock>false</Lock>
-					<ShowIn3D>false</ShowIn3D>
-					<Z>0</Z>
-					<Rotation>0.0</Rotation>
-					<Color>-16777216</Color>
-					<Text><![CDATA[]]></Text>
 					<Font>
 						<Name>SansSerif</Name>
 						<Size>10</Size>
@@ -737,7 +906,7 @@ virtualMachinesList.add(entity);]]></Value>
 				<Text>
 					<Id>1385362632180</Id>
 					<Name><![CDATA[text6]]></Name>
-					<X>270</X><Y>380</Y>
+					<X>180</X><Y>390</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -761,7 +930,7 @@ virtualMachinesList.add(entity);]]></Value>
 				<Text>
 					<Id>1385362632195</Id>
 					<Name><![CDATA[text7]]></Name>
-					<X>270</X><Y>430</Y>
+					<X>180</X><Y>440</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -785,7 +954,7 @@ virtualMachinesList.add(entity);]]></Value>
 				<Text>
 					<Id>1385362632211</Id>
 					<Name><![CDATA[text8]]></Name>
-					<X>270</X><Y>480</Y>
+					<X>180</X><Y>490</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -807,80 +976,9 @@ virtualMachinesList.add(entity);]]></Value>
 					<Alignment>LEFT</Alignment>
 				</Text>
 				<Text>
-					<Id>1385362632213</Id>
-					<Name><![CDATA[CPU3]]></Name>
-					<X>370</X><Y>380</Y>
-					<Label><X>0</X><Y>-10</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<AsObject>true</AsObject>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Lock>false</Lock>
-					<ShowIn3D>false</ShowIn3D>
-					<Z>0</Z>
-					<Rotation>0.0</Rotation>
-					<Color>-16777216</Color>
-					<Text><![CDATA[
-
-]]></Text>
-					<Font>
-						<Name>SansSerif</Name>
-						<Size>10</Size>
-						<Style>0</Style>
-					</Font>
-					<Alignment>LEFT</Alignment>
-				</Text>
-				<Text>
-					<Id>1385362632215</Id>
-					<Name><![CDATA[memory3]]></Name>
-					<X>370</X><Y>430</Y>
-					<Label><X>0</X><Y>-10</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<AsObject>true</AsObject>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Lock>false</Lock>
-					<ShowIn3D>false</ShowIn3D>
-					<Z>0</Z>
-					<Rotation>0.0</Rotation>
-					<Color>-16777216</Color>
-					<Text><![CDATA[]]></Text>
-					<Font>
-						<Name>SansSerif</Name>
-						<Size>10</Size>
-						<Style>0</Style>
-					</Font>
-					<Alignment>LEFT</Alignment>
-				</Text>
-				<Text>
-					<Id>1385362632226</Id>
-					<Name><![CDATA[input3]]></Name>
-					<X>370</X><Y>480</Y>
-					<Label><X>0</X><Y>-10</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<AsObject>true</AsObject>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Lock>false</Lock>
-					<ShowIn3D>false</ShowIn3D>
-					<Z>0</Z>
-					<Rotation>0.0</Rotation>
-					<Color>-16777216</Color>
-					<Text><![CDATA[]]></Text>
-					<Font>
-						<Name>SansSerif</Name>
-						<Size>10</Size>
-						<Style>0</Style>
-					</Font>
-					<Alignment>LEFT</Alignment>
-				</Text>
-				<Text>
 					<Id>1385362644691</Id>
 					<Name><![CDATA[text9]]></Name>
-					<X>710</X><Y>20</Y>
+					<X>620</X><Y>30</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -904,7 +1002,7 @@ virtualMachinesList.add(entity);]]></Value>
 				<Text>
 					<Id>1385362644706</Id>
 					<Name><![CDATA[text10]]></Name>
-					<X>710</X><Y>70</Y>
+					<X>620</X><Y>80</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -928,7 +1026,7 @@ virtualMachinesList.add(entity);]]></Value>
 				<Text>
 					<Id>1385362644708</Id>
 					<Name><![CDATA[text11]]></Name>
-					<X>710</X><Y>120</Y>
+					<X>620</X><Y>130</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -950,80 +1048,9 @@ virtualMachinesList.add(entity);]]></Value>
 					<Alignment>LEFT</Alignment>
 				</Text>
 				<Text>
-					<Id>1385362644722</Id>
-					<Name><![CDATA[CPU4]]></Name>
-					<X>810</X><Y>20</Y>
-					<Label><X>0</X><Y>-10</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<AsObject>true</AsObject>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Lock>false</Lock>
-					<ShowIn3D>false</ShowIn3D>
-					<Z>0</Z>
-					<Rotation>0.0</Rotation>
-					<Color>-16777216</Color>
-					<Text><![CDATA[
-
-]]></Text>
-					<Font>
-						<Name>SansSerif</Name>
-						<Size>10</Size>
-						<Style>0</Style>
-					</Font>
-					<Alignment>LEFT</Alignment>
-				</Text>
-				<Text>
-					<Id>1385362644724</Id>
-					<Name><![CDATA[memory4]]></Name>
-					<X>810</X><Y>70</Y>
-					<Label><X>0</X><Y>-10</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<AsObject>true</AsObject>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Lock>false</Lock>
-					<ShowIn3D>false</ShowIn3D>
-					<Z>0</Z>
-					<Rotation>0.0</Rotation>
-					<Color>-16777216</Color>
-					<Text><![CDATA[]]></Text>
-					<Font>
-						<Name>SansSerif</Name>
-						<Size>10</Size>
-						<Style>0</Style>
-					</Font>
-					<Alignment>LEFT</Alignment>
-				</Text>
-				<Text>
-					<Id>1385362644726</Id>
-					<Name><![CDATA[input4]]></Name>
-					<X>810</X><Y>120</Y>
-					<Label><X>0</X><Y>-10</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<AsObject>true</AsObject>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Lock>false</Lock>
-					<ShowIn3D>false</ShowIn3D>
-					<Z>0</Z>
-					<Rotation>0.0</Rotation>
-					<Color>-16777216</Color>
-					<Text><![CDATA[]]></Text>
-					<Font>
-						<Name>SansSerif</Name>
-						<Size>10</Size>
-						<Style>0</Style>
-					</Font>
-					<Alignment>LEFT</Alignment>
-				</Text>
-				<Text>
 					<Id>1385362653879</Id>
 					<Name><![CDATA[text12]]></Name>
-					<X>710</X><Y>200</Y>
+					<X>620</X><Y>210</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1047,7 +1074,7 @@ virtualMachinesList.add(entity);]]></Value>
 				<Text>
 					<Id>1385362653895</Id>
 					<Name><![CDATA[text13]]></Name>
-					<X>710</X><Y>250</Y>
+					<X>620</X><Y>260</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1071,7 +1098,7 @@ virtualMachinesList.add(entity);]]></Value>
 				<Text>
 					<Id>1385362653897</Id>
 					<Name><![CDATA[text14]]></Name>
-					<X>710</X><Y>300</Y>
+					<X>620</X><Y>310</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1093,80 +1120,9 @@ virtualMachinesList.add(entity);]]></Value>
 					<Alignment>LEFT</Alignment>
 				</Text>
 				<Text>
-					<Id>1385362653899</Id>
-					<Name><![CDATA[CPU5]]></Name>
-					<X>810</X><Y>200</Y>
-					<Label><X>0</X><Y>-10</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<AsObject>true</AsObject>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Lock>false</Lock>
-					<ShowIn3D>false</ShowIn3D>
-					<Z>0</Z>
-					<Rotation>0.0</Rotation>
-					<Color>-16777216</Color>
-					<Text><![CDATA[
-
-]]></Text>
-					<Font>
-						<Name>SansSerif</Name>
-						<Size>10</Size>
-						<Style>0</Style>
-					</Font>
-					<Alignment>LEFT</Alignment>
-				</Text>
-				<Text>
-					<Id>1385362653910</Id>
-					<Name><![CDATA[memory5]]></Name>
-					<X>810</X><Y>250</Y>
-					<Label><X>0</X><Y>-10</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<AsObject>true</AsObject>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Lock>false</Lock>
-					<ShowIn3D>false</ShowIn3D>
-					<Z>0</Z>
-					<Rotation>0.0</Rotation>
-					<Color>-16777216</Color>
-					<Text><![CDATA[]]></Text>
-					<Font>
-						<Name>SansSerif</Name>
-						<Size>10</Size>
-						<Style>0</Style>
-					</Font>
-					<Alignment>LEFT</Alignment>
-				</Text>
-				<Text>
-					<Id>1385362653912</Id>
-					<Name><![CDATA[input5]]></Name>
-					<X>810</X><Y>300</Y>
-					<Label><X>0</X><Y>-10</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<AsObject>true</AsObject>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Lock>false</Lock>
-					<ShowIn3D>false</ShowIn3D>
-					<Z>0</Z>
-					<Rotation>0.0</Rotation>
-					<Color>-16777216</Color>
-					<Text><![CDATA[]]></Text>
-					<Font>
-						<Name>SansSerif</Name>
-						<Size>10</Size>
-						<Style>0</Style>
-					</Font>
-					<Alignment>LEFT</Alignment>
-				</Text>
-				<Text>
 					<Id>1385362822312</Id>
 					<Name><![CDATA[text15]]></Name>
-					<X>710</X><Y>380</Y>
+					<X>620</X><Y>390</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1190,7 +1146,7 @@ virtualMachinesList.add(entity);]]></Value>
 				<Text>
 					<Id>1385362822314</Id>
 					<Name><![CDATA[text16]]></Name>
-					<X>710</X><Y>430</Y>
+					<X>620</X><Y>440</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1214,7 +1170,7 @@ virtualMachinesList.add(entity);]]></Value>
 				<Text>
 					<Id>1385362822316</Id>
 					<Name><![CDATA[text17]]></Name>
-					<X>710</X><Y>480</Y>
+					<X>620</X><Y>490</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1228,77 +1184,6 @@ virtualMachinesList.add(entity);]]></Value>
 					<Color>-16777216</Color>
 					<Text><![CDATA[I/O
 ]]></Text>
-					<Font>
-						<Name>SansSerif</Name>
-						<Size>10</Size>
-						<Style>0</Style>
-					</Font>
-					<Alignment>LEFT</Alignment>
-				</Text>
-				<Text>
-					<Id>1385362822328</Id>
-					<Name><![CDATA[CPU6]]></Name>
-					<X>810</X><Y>380</Y>
-					<Label><X>0</X><Y>-10</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<AsObject>true</AsObject>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Lock>false</Lock>
-					<ShowIn3D>false</ShowIn3D>
-					<Z>0</Z>
-					<Rotation>0.0</Rotation>
-					<Color>-16777216</Color>
-					<Text><![CDATA[
-
-]]></Text>
-					<Font>
-						<Name>SansSerif</Name>
-						<Size>10</Size>
-						<Style>0</Style>
-					</Font>
-					<Alignment>LEFT</Alignment>
-				</Text>
-				<Text>
-					<Id>1385362822330</Id>
-					<Name><![CDATA[memory6]]></Name>
-					<X>810</X><Y>430</Y>
-					<Label><X>0</X><Y>-10</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<AsObject>true</AsObject>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Lock>false</Lock>
-					<ShowIn3D>false</ShowIn3D>
-					<Z>0</Z>
-					<Rotation>0.0</Rotation>
-					<Color>-16777216</Color>
-					<Text><![CDATA[]]></Text>
-					<Font>
-						<Name>SansSerif</Name>
-						<Size>10</Size>
-						<Style>0</Style>
-					</Font>
-					<Alignment>LEFT</Alignment>
-				</Text>
-				<Text>
-					<Id>1385362822344</Id>
-					<Name><![CDATA[input6]]></Name>
-					<X>810</X><Y>480</Y>
-					<Label><X>0</X><Y>-10</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<AsObject>true</AsObject>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Lock>false</Lock>
-					<ShowIn3D>false</ShowIn3D>
-					<Z>0</Z>
-					<Rotation>0.0</Rotation>
-					<Color>-16777216</Color>
-					<Text><![CDATA[]]></Text>
 					<Font>
 						<Name>SansSerif</Name>
 						<Size>10</Size>
@@ -1449,6 +1334,155 @@ virtualMachinesList.add(entity);]]></Value>
 					</Font>
 					<Alignment>LEFT</Alignment>
 				</Text>
+				<Text>
+					<Id>1386845866583</Id>
+					<Name><![CDATA[text19]]></Name>
+					<X>250</X><Y>440</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<AsObject>true</AsObject>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Lock>false</Lock>
+					<ShowIn3D>false</ShowIn3D>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[
+
+]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>10</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1386846878785</Id>
+					<Name><![CDATA[text20]]></Name>
+					<X>50</X><Y>150</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<AsObject>true</AsObject>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Lock>false</Lock>
+					<ShowIn3D>false</ShowIn3D>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[
+]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>10</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1386847338023</Id>
+					<Name><![CDATA[text21]]></Name>
+					<X>250</X><Y>260</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<AsObject>true</AsObject>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Lock>false</Lock>
+					<ShowIn3D>false</ShowIn3D>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[
+
+]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>10</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1386847350004</Id>
+					<Name><![CDATA[text22]]></Name>
+					<X>700</X><Y>440</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<AsObject>true</AsObject>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Lock>false</Lock>
+					<ShowIn3D>false</ShowIn3D>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[
+
+]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>10</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1386847355386</Id>
+					<Name><![CDATA[text23]]></Name>
+					<X>690</X><Y>260</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<AsObject>true</AsObject>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Lock>false</Lock>
+					<ShowIn3D>false</ShowIn3D>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[
+
+]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>10</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1386847365089</Id>
+					<Name><![CDATA[text24]]></Name>
+					<X>700</X><Y>80</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<AsObject>true</AsObject>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Lock>false</Lock>
+					<ShowIn3D>false</ShowIn3D>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[
+
+]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>10</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
 			</Shapes>
 			<Controls>
 				<Control Type="Button">
@@ -1493,7 +1527,7 @@ virtualMachinesList.add(entity);]]></Value>
 						<DefaultValueCode><![CDATA[0]]></DefaultValueCode>
 						<Orientation>HORIZONTAL</Orientation>
 						<MinValue><![CDATA[0]]></MinValue>
-						<MaxValue><![CDATA[100]]></MaxValue>
+						<MaxValue><![CDATA[8]]></MaxValue>
 						<LinkTo>false</LinkTo>
 					</ExtendedProperties>
 				</Control>
@@ -1517,7 +1551,7 @@ virtualMachinesList.add(entity);]]></Value>
 						<DefaultValueCode><![CDATA[0]]></DefaultValueCode>
 						<Orientation>HORIZONTAL</Orientation>
 						<MinValue><![CDATA[0]]></MinValue>
-						<MaxValue><![CDATA[100]]></MaxValue>
+						<MaxValue><![CDATA[32]]></MaxValue>
 						<LinkTo>false</LinkTo>
 					</ExtendedProperties>
 				</Control>
@@ -1540,387 +1574,29 @@ virtualMachinesList.add(entity);]]></Value>
 						<DefaultValueCode><![CDATA[0]]></DefaultValueCode>
 						<Orientation>HORIZONTAL</Orientation>
 						<MinValue><![CDATA[0]]></MinValue>
-						<MaxValue><![CDATA[100]]></MaxValue>
-						<LinkTo>false</LinkTo>
-					</ExtendedProperties>
-				</Control>
-				<Control Type="Slider">
-				 	<EmbeddedIcon>false</EmbeddedIcon>				
-					<Id>1385360436549</Id>
-					<Name><![CDATA[slider3]]></Name>
-					<X>270</X><Y>210</Y>
-					<Label><X>0</X><Y>-10</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<BasicProperties Width="150" Height="30" 
-				AsObject="true">
-                        <EmbeddedIcon>false</EmbeddedIcon>				
-						<FillColor/>
-						<ActionCode><![CDATA[CPU2.setText((int)slider3.value)]]></ActionCode>
-					</BasicProperties>
-					<ExtendedProperties>
-						<DefaultValueCode><![CDATA[50]]></DefaultValueCode>
-						<Orientation>HORIZONTAL</Orientation>
-						<MinValue><![CDATA[
-0
-]]></MinValue>
-						<MaxValue><![CDATA[100]]></MaxValue>
-						<LinkTo>false</LinkTo>
-					</ExtendedProperties>
-				</Control>
-				<Control Type="Slider">
-				 	<EmbeddedIcon>false</EmbeddedIcon>				
-					<Id>1385360436551</Id>
-					<Name><![CDATA[slider4]]></Name>
-					<X>270</X><Y>260</Y>
-					<Label><X>0</X><Y>-10</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<BasicProperties Width="150" Height="30" 
-				AsObject="true">
-                        <EmbeddedIcon>false</EmbeddedIcon>				
-						<FillColor/>
-						<ActionCode><![CDATA[memory2.setText((int)slider4.value)]]></ActionCode>
-					</BasicProperties>
-					<ExtendedProperties>
-						<DefaultValueCode><![CDATA[50
-]]></DefaultValueCode>
-						<Orientation>HORIZONTAL</Orientation>
-						<MinValue><![CDATA[0]]></MinValue>
-						<MaxValue><![CDATA[100]]></MaxValue>
-						<LinkTo>false</LinkTo>
-					</ExtendedProperties>
-				</Control>
-				<Control Type="Slider">
-				 	<EmbeddedIcon>false</EmbeddedIcon>				
-					<Id>1385360436566</Id>
-					<Name><![CDATA[slider5]]></Name>
-					<X>270</X><Y>310</Y>
-					<Label><X>0</X><Y>-10</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<BasicProperties Width="150" Height="30" 
-				AsObject="true">
-                        <EmbeddedIcon>false</EmbeddedIcon>				
-						<FillColor/>
-						<ActionCode><![CDATA[input2.setText((int)slider5.value)]]></ActionCode>
-					</BasicProperties>
-					<ExtendedProperties>
-						<DefaultValueCode><![CDATA[50]]></DefaultValueCode>
-						<Orientation>HORIZONTAL</Orientation>
-						<MinValue><![CDATA[0]]></MinValue>
-						<MaxValue><![CDATA[100]]></MaxValue>
-						<LinkTo>false</LinkTo>
-					</ExtendedProperties>
-				</Control>
-				<Control Type="Slider">
-				 	<EmbeddedIcon>false</EmbeddedIcon>				
-					<Id>1385362632242</Id>
-					<Name><![CDATA[slider6]]></Name>
-					<X>270</X><Y>390</Y>
-					<Label><X>0</X><Y>-10</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<BasicProperties Width="150" Height="30" 
-				AsObject="true">
-                        <EmbeddedIcon>false</EmbeddedIcon>				
-						<FillColor/>
-						<ActionCode><![CDATA[CPU3.setText((int)slider6.value)]]></ActionCode>
-					</BasicProperties>
-					<ExtendedProperties>
-						<DefaultValueCode><![CDATA[50]]></DefaultValueCode>
-						<Orientation>HORIZONTAL</Orientation>
-						<MinValue><![CDATA[0]]></MinValue>
-						<MaxValue><![CDATA[100]]></MaxValue>
-						<LinkTo>false</LinkTo>
-					</ExtendedProperties>
-				</Control>
-				<Control Type="Slider">
-				 	<EmbeddedIcon>false</EmbeddedIcon>				
-					<Id>1385362632258</Id>
-					<Name><![CDATA[slider7]]></Name>
-					<X>270</X><Y>440</Y>
-					<Label><X>0</X><Y>-10</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<BasicProperties Width="150" Height="30" 
-				AsObject="true">
-                        <EmbeddedIcon>false</EmbeddedIcon>				
-						<FillColor/>
-						<ActionCode><![CDATA[memory3.setText((int)slider7.value)]]></ActionCode>
-					</BasicProperties>
-					<ExtendedProperties>
-						<DefaultValueCode><![CDATA[50]]></DefaultValueCode>
-						<Orientation>HORIZONTAL</Orientation>
-						<MinValue><![CDATA[0]]></MinValue>
-						<MaxValue><![CDATA[100]]></MaxValue>
-						<LinkTo>false</LinkTo>
-					</ExtendedProperties>
-				</Control>
-				<Control Type="Slider">
-				 	<EmbeddedIcon>false</EmbeddedIcon>				
-					<Id>1385362632273</Id>
-					<Name><![CDATA[slider8]]></Name>
-					<X>270</X><Y>490</Y>
-					<Label><X>0</X><Y>-10</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<BasicProperties Width="150" Height="30" 
-				AsObject="true">
-                        <EmbeddedIcon>false</EmbeddedIcon>				
-						<FillColor/>
-						<ActionCode><![CDATA[input3.setText((int)slider8.value)]]></ActionCode>
-					</BasicProperties>
-					<ExtendedProperties>
-						<DefaultValueCode><![CDATA[50]]></DefaultValueCode>
-						<Orientation>HORIZONTAL</Orientation>
-						<MinValue><![CDATA[0]]></MinValue>
-						<MaxValue><![CDATA[100]]></MaxValue>
-						<LinkTo>false</LinkTo>
-					</ExtendedProperties>
-				</Control>
-				<Control Type="Slider">
-				 	<EmbeddedIcon>false</EmbeddedIcon>				
-					<Id>1385362644738</Id>
-					<Name><![CDATA[slider9]]></Name>
-					<X>710</X><Y>30</Y>
-					<Label><X>0</X><Y>-10</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<BasicProperties Width="150" Height="30" 
-				AsObject="true">
-                        <EmbeddedIcon>false</EmbeddedIcon>				
-						<FillColor/>
-						<ActionCode><![CDATA[CPU4.setText((int)slider9.value)]]></ActionCode>
-					</BasicProperties>
-					<ExtendedProperties>
-						<DefaultValueCode><![CDATA[50]]></DefaultValueCode>
-						<Orientation>HORIZONTAL</Orientation>
-						<MinValue><![CDATA[0]]></MinValue>
-						<MaxValue><![CDATA[100]]></MaxValue>
-						<LinkTo>false</LinkTo>
-					</ExtendedProperties>
-				</Control>
-				<Control Type="Slider">
-				 	<EmbeddedIcon>false</EmbeddedIcon>				
-					<Id>1385362644753</Id>
-					<Name><![CDATA[slider10]]></Name>
-					<X>710</X><Y>80</Y>
-					<Label><X>0</X><Y>-10</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<BasicProperties Width="150" Height="30" 
-				AsObject="true">
-                        <EmbeddedIcon>false</EmbeddedIcon>				
-						<FillColor/>
-						<ActionCode><![CDATA[memory4.setText((int)slider10.value)]]></ActionCode>
-					</BasicProperties>
-					<ExtendedProperties>
-						<DefaultValueCode><![CDATA[50]]></DefaultValueCode>
-						<Orientation>HORIZONTAL</Orientation>
-						<MinValue><![CDATA[0]]></MinValue>
-						<MaxValue><![CDATA[100]]></MaxValue>
-						<LinkTo>false</LinkTo>
-					</ExtendedProperties>
-				</Control>
-				<Control Type="Slider">
-				 	<EmbeddedIcon>false</EmbeddedIcon>				
-					<Id>1385362644755</Id>
-					<Name><![CDATA[slider11]]></Name>
-					<X>710</X><Y>130</Y>
-					<Label><X>0</X><Y>-10</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<BasicProperties Width="150" Height="30" 
-				AsObject="true">
-                        <EmbeddedIcon>false</EmbeddedIcon>				
-						<FillColor/>
-						<ActionCode><![CDATA[input4.setText((int)slider11.value)]]></ActionCode>
-					</BasicProperties>
-					<ExtendedProperties>
-						<DefaultValueCode><![CDATA[50]]></DefaultValueCode>
-						<Orientation>HORIZONTAL</Orientation>
-						<MinValue><![CDATA[0]]></MinValue>
-						<MaxValue><![CDATA[100]]></MaxValue>
-						<LinkTo>false</LinkTo>
-					</ExtendedProperties>
-				</Control>
-				<Control Type="Slider">
-				 	<EmbeddedIcon>false</EmbeddedIcon>				
-					<Id>1385362653926</Id>
-					<Name><![CDATA[slider12]]></Name>
-					<X>710</X><Y>210</Y>
-					<Label><X>0</X><Y>-10</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<BasicProperties Width="150" Height="30" 
-				AsObject="true">
-                        <EmbeddedIcon>false</EmbeddedIcon>				
-						<FillColor/>
-						<ActionCode><![CDATA[CPU5.setText((int)slider12.value)]]></ActionCode>
-					</BasicProperties>
-					<ExtendedProperties>
-						<DefaultValueCode><![CDATA[50]]></DefaultValueCode>
-						<Orientation>HORIZONTAL</Orientation>
-						<MinValue><![CDATA[0]]></MinValue>
-						<MaxValue><![CDATA[100]]></MaxValue>
-						<LinkTo>false</LinkTo>
-					</ExtendedProperties>
-				</Control>
-				<Control Type="Slider">
-				 	<EmbeddedIcon>false</EmbeddedIcon>				
-					<Id>1385362653942</Id>
-					<Name><![CDATA[slider13]]></Name>
-					<X>710</X><Y>260</Y>
-					<Label><X>0</X><Y>-10</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<BasicProperties Width="150" Height="30" 
-				AsObject="true">
-                        <EmbeddedIcon>false</EmbeddedIcon>				
-						<FillColor/>
-						<ActionCode><![CDATA[memory5.setText((int)slider13.value)]]></ActionCode>
-					</BasicProperties>
-					<ExtendedProperties>
-						<DefaultValueCode><![CDATA[50]]></DefaultValueCode>
-						<Orientation>HORIZONTAL</Orientation>
-						<MinValue><![CDATA[0]]></MinValue>
-						<MaxValue><![CDATA[100]]></MaxValue>
-						<LinkTo>false</LinkTo>
-					</ExtendedProperties>
-				</Control>
-				<Control Type="Slider">
-				 	<EmbeddedIcon>false</EmbeddedIcon>				
-					<Id>1385362653944</Id>
-					<Name><![CDATA[slider14]]></Name>
-					<X>710</X><Y>310</Y>
-					<Label><X>0</X><Y>-10</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<BasicProperties Width="150" Height="30" 
-				AsObject="true">
-                        <EmbeddedIcon>false</EmbeddedIcon>				
-						<FillColor/>
-						<ActionCode><![CDATA[input5.setText((int)slider14.value)]]></ActionCode>
-					</BasicProperties>
-					<ExtendedProperties>
-						<DefaultValueCode><![CDATA[50]]></DefaultValueCode>
-						<Orientation>HORIZONTAL</Orientation>
-						<MinValue><![CDATA[0]]></MinValue>
-						<MaxValue><![CDATA[100]]></MaxValue>
-						<LinkTo>false</LinkTo>
-					</ExtendedProperties>
-				</Control>
-				<Control Type="Slider">
-				 	<EmbeddedIcon>false</EmbeddedIcon>				
-					<Id>1385362822346</Id>
-					<Name><![CDATA[slider15]]></Name>
-					<X>710</X><Y>390</Y>
-					<Label><X>0</X><Y>-10</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<BasicProperties Width="150" Height="30" 
-				AsObject="true">
-                        <EmbeddedIcon>false</EmbeddedIcon>				
-						<FillColor/>
-						<ActionCode><![CDATA[CPU6.setText((int)slider15.value)]]></ActionCode>
-					</BasicProperties>
-					<ExtendedProperties>
-						<DefaultValueCode><![CDATA[50]]></DefaultValueCode>
-						<Orientation>HORIZONTAL</Orientation>
-						<MinValue><![CDATA[0]]></MinValue>
-						<MaxValue><![CDATA[100]]></MaxValue>
-						<LinkTo>false</LinkTo>
-					</ExtendedProperties>
-				</Control>
-				<Control Type="Slider">
-				 	<EmbeddedIcon>false</EmbeddedIcon>				
-					<Id>1385362822359</Id>
-					<Name><![CDATA[slider16]]></Name>
-					<X>710</X><Y>440</Y>
-					<Label><X>0</X><Y>-10</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<BasicProperties Width="150" Height="30" 
-				AsObject="true">
-                        <EmbeddedIcon>false</EmbeddedIcon>				
-						<FillColor/>
-						<ActionCode><![CDATA[memory6.setText((int)slider16.value)]]></ActionCode>
-					</BasicProperties>
-					<ExtendedProperties>
-						<DefaultValueCode><![CDATA[50]]></DefaultValueCode>
-						<Orientation>HORIZONTAL</Orientation>
-						<MinValue><![CDATA[0]]></MinValue>
-						<MaxValue><![CDATA[100]]></MaxValue>
-						<LinkTo>false</LinkTo>
-					</ExtendedProperties>
-				</Control>
-				<Control Type="Slider">
-				 	<EmbeddedIcon>false</EmbeddedIcon>				
-					<Id>1385362822375</Id>
-					<Name><![CDATA[slider17]]></Name>
-					<X>710</X><Y>490</Y>
-					<Label><X>0</X><Y>-10</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<BasicProperties Width="150" Height="30" 
-				AsObject="true">
-                        <EmbeddedIcon>false</EmbeddedIcon>				
-						<FillColor/>
-						<ActionCode><![CDATA[input6.setText((int)slider17.value)]]></ActionCode>
-					</BasicProperties>
-					<ExtendedProperties>
-						<DefaultValueCode><![CDATA[50]]></DefaultValueCode>
-						<Orientation>HORIZONTAL</Orientation>
-						<MinValue><![CDATA[0]]></MinValue>
-						<MaxValue><![CDATA[100]]></MaxValue>
+						<MaxValue><![CDATA[1024]]></MaxValue>
 						<LinkTo>false</LinkTo>
 					</ExtendedProperties>
 				</Control>
 				<Control Type="Button">
 				 	<EmbeddedIcon>false</EmbeddedIcon>				
-					<Id>1385364327973</Id>
+					<Id>1386852099889</Id>
 					<Name><![CDATA[button1]]></Name>
-					<X>890</X><Y>10</Y>
+					<X>910</X><Y>20</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
-					<BasicProperties Width="110" Height="50" 
+					<BasicProperties Width="100" Height="30" 
 				AsObject="true">
                         <EmbeddedIcon>false</EmbeddedIcon>				
 						<FillColor/>
 						<TextColor/>
-						<ActionCode><![CDATA[firstUnit.updateObject((float)slider3.value,(float)slider4.value,(float)slider5.value);
-secondUnit.updateObject((float)slider6.value,(float)slider7.value,(float)slider8.value);
-thirdUnit.updateObject((float)slider9.value,(float)slider10.value,(float)slider11.value);
-fouthUnit.updateObject((float)slider12.value,(float)slider13.value,(float)slider14.value);
-fifthUnit.updateObject((float)slider15.value,(float)slider16.value,(float)slider17.value);
-unitsArray.clear();
-unitsArray.add(firstUnit);
-unitsArray.add(secondUnit);
-unitsArray.add(thirdUnit);
-unitsArray.add(fouthUnit);
-unitsArray.add(fifthUnit);]]></ActionCode>
+						<ActionCode><![CDATA[manager.makeParametrsArray(virtualMachinesList);]]></ActionCode>
 					</BasicProperties>
 					<ExtendedProperties>
 						<Font Name="Dialog" Size="11" Style="0"/>
-						<LabelText><![CDATA[Update]]></LabelText>
+						<LabelText><![CDATA[Reconfig]]></LabelText>
 					</ExtendedProperties>
 				</Control>
 			</Controls>
@@ -2806,6 +2482,8 @@ public class VirtualMachine extends com.xj.anylogic.libraries.enterprise.Entity 
 	
 	public float inputOutput = 0;
 	
+	public int cUCount; 
+	
 	public ComputingUnit unit;
     /**
      * Конструктор по умолчанию
@@ -2816,10 +2494,34 @@ public class VirtualMachine extends com.xj.anylogic.libraries.enterprise.Entity 
     /**
      * Конструктор, инициализирующий поля
      */     
+    
+    public boolean goToRandomUnit(ArrayList cu)
+    {
+    	
+    	boolean flag = false;
+    	
+    	for (int i = 0; i<20 & flag==false; i++)
+    	{
+    		Random ran = new Random ();
+    		
+    		int random = ran.nextInt(5);
+    		ComputingUnit myCU = (ComputingUnit)cu.get(random);
+    		if(myCU.allocatedCPU+this.cPU <= myCU.cPU && myCU.allocatedMemory + this.memory <= myCU.cPU && myCU.allocatedInputOutput + this.inputOutput <= myCU.inputOutput){
+    			flag = true;
+    			this.cUCount = random;
+    			return true;
+    		}
+    		
+    			
+    	}
+    	this.cUCount=-1;  
+    	return false;
+    }
+    
     public VirtualMachine(float cPU, float memory, float inputOutput){
-		this.cPU = cPU;
-		this.memory = memory;
-		this.inputOutput = inputOutput;
+		this.cPU = cPU/8;
+		this.memory = memory/64;
+		this.inputOutput = inputOutput/1024;
     }     
 	public void setCPU (float cPU)
 	{
@@ -2862,16 +2564,18 @@ public class VirtualMachine extends com.xj.anylogic.libraries.enterprise.Entity 
 		<JavaClass>
 			<Id>1385362988670</Id>
 			<Name><![CDATA[ComputingUnit]]></Name>
-			<Text><![CDATA[/**
+			<Text><![CDATA[	
+
+/**
  * ComputingUnit
  */	
 public class ComputingUnit implements java.io.Serializable {
 
-	public float cPU = 50;
+	public float cPU = 1;
 	
-	public float memory = 50;
+	public float memory = 1;
 	
-	public float inputOutput = 50;
+	public float inputOutput = 1;
 	
 	public float allocatedCPU = 0;
 	
@@ -2879,15 +2583,15 @@ public class ComputingUnit implements java.io.Serializable {
 	
 	public float allocatedInputOutput = 0;
 	
-	public ArrayList<VirtualMachine> virtualMachines = new ArrayList<VirtualMachine>();
+	public int virtualMachines = 0;
     /**
      * Конструктор по умолчанию
      */
-	public ComputingUnit (float cPU, float memory, float inputOutput){
-			this.cPU = cPU;
-			this.memory = memory;
-			this.inputOutput = inputOutput;
-	    }     
+	public ComputingUnit (int cPU, int memory, int inputOutput){
+			this.cPU = cPU/8;
+			this.memory = memory/32;
+			this.inputOutput = inputOutput/1024;
+	}     
     public ComputingUnit(float cPU){
     	this.cPU = cPU;
     }
@@ -2897,16 +2601,16 @@ public class ComputingUnit implements java.io.Serializable {
     
     public void setCPU (float cPU)
 	{
-		this.cPU = cPU;
+		this.cPU = cPU/8;
 	}
     
 	public void setMemory (float memory)
 	{
-		this.memory = memory;
+		this.memory = memory/32;
 	}
 	public void setInputOutput (float inputOutput)
 	{
-		this.inputOutput = inputOutput;
+		this.inputOutput = inputOutput/1024;
 	}
 	public float getCPU()
     {
@@ -2923,6 +2627,7 @@ public class ComputingUnit implements java.io.Serializable {
 		
     }     
 	
+	
 	public void addAllocatedResources (float allocatedCPU, float allocatedMemory, float allocatedInputOutput){
 		float cpu;
 		float memory;
@@ -2937,6 +2642,13 @@ public class ComputingUnit implements java.io.Serializable {
 			this.allocatedInputOutput = io;
 		}
 	}
+	public void deallocRes()
+	{
+		this.allocatedCPU = 0;
+		this.allocatedMemory = 0;
+		this.allocatedInputOutput = 0;
+		this.virtualMachines = 0;
+	}
 	public void addNewVirtualMachine(VirtualMachine vm)
 	{
 		float cpu;
@@ -2950,10 +2662,78 @@ public class ComputingUnit implements java.io.Serializable {
 			this.allocatedCPU = cpu;
 			this.allocatedMemory = memory;
 			this.allocatedInputOutput = io;
-			this.virtualMachines.add(vm);
+			this.virtualMachines++;
 		}
 	}
 	
+	
+	
+	@Override
+	public String toString() {			
+		return super.toString();
+	}
+
+	/**
+	 * Это число используется при сохранении состояния модели<br>
+	 * Его рекомендуется изменить в случае изменения класса
+	 */ 
+	private static final long serialVersionUID = 1L;
+
+} 
+]]></Text>
+		</JavaClass>
+		<!--   =========   Java Class   ========  -->
+		<JavaClass>
+			<Id>1386850986649</Id>
+			<Name><![CDATA[Manager]]></Name>
+			<Text><![CDATA[/**
+ * Manager
+ */	
+public class Manager implements java.io.Serializable {
+
+	
+    /**
+     * Конструктор по умолчанию
+     */
+    public Manager(){
+    }
+    
+    public List<Float> makeParametrsArray (ArrayList virtualMachines)
+    {
+    	List<Float> floatList = new ArrayList<Float>();
+    	
+    	for (int i = 0; i < virtualMachines.size(); i++)
+    	{
+    		VirtualMachine currentVM =(VirtualMachine) virtualMachines.get(i);
+    		floatList.add(currentVM.cPU);
+    		floatList.add(currentVM.memory);
+    		floatList.add(currentVM.inputOutput);
+    	}
+    	for (int j = floatList.size(); j<120; j++)
+    	{
+    		floatList.add((float)0);
+    	}
+    	for (int i = 0;i<120;i++)
+    	{
+    		System.out.printf("%f\n",floatList.get(i));	
+    	}
+    	
+    	return floatList;
+    }
+    public void reconfigAllUnits (List<Integer> gettedArray,ArrayList<VirtualMachine> virtualMachines, ArrayList<ComputingUnit> unitsArray)
+    {
+    	for (int j = 0; j<5; j++)
+    	{
+    		unitsArray.get(j).deallocRes();
+    	}
+    	for	(int i = 0; i<gettedArray.size(); i++)
+    	{
+    		if (gettedArray.get(i)>0 & gettedArray.get(i)<4){
+    			unitsArray.get(gettedArray.get(i)).addNewVirtualMachine(virtualMachines.get(i));
+    		}
+    			
+    	}
+    }
 	
 	@Override
 	public String toString() {			

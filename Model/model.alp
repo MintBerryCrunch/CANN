@@ -2902,7 +2902,6 @@ public class VirtualMachine extends com.xj.anylogic.libraries.enterprise.Entity 
 			<Id>1385362988670</Id>
 			<Name><![CDATA[ComputingUnit]]></Name>
 			<Text><![CDATA[	
-package model;
 import java.sql.Connection;
 import java.sql.SQLException;
 
