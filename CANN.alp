@@ -35,7 +35,10 @@ unitsArray.add(thirdUnit);
 unitsArray.add(fouthUnit);
 unitsArray.add(fifthUnit);
 manager.findBiggestVM(unitsArray);
-text31.setText(manager.min);]]></StartupCode>
+text31.setText(manager.min);
+text19.setVisible(false);
+polyline2.setVisible(false);
+message.setVisible(false);]]></StartupCode>
 			<Generic>false</Generic>
 			<GenericParameters><![CDATA[T]]></GenericParameters>
 			<GenericParametersLabel><![CDATA[Generic parameters:]]></GenericParametersLabel>
@@ -144,7 +147,7 @@ text31.setText(manager.min);]]></StartupCode>
 					<ShowLabel>true</ShowLabel>
 					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
 						<Type><![CDATA[boolean]]></Type>        
-						<InitialValue><![CDATA[false]]></InitialValue>                 	
+						<InitialValue><![CDATA[true]]></InitialValue>                 	
 					</Properties>
 				</Variable>
 				<Variable Class="PlainVariable">
@@ -309,7 +312,7 @@ text31.setText(manager.min);]]></StartupCode>
 				<Connector>
 					<Id>1386848041787</Id>
 					<Name><![CDATA[connector]]></Name>
-					<X>320</X><Y>450</Y>
+					<X>350</X><Y>450</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -319,8 +322,8 @@ text31.setText(manager.min);]]></StartupCode>
 					<TargetEmbeddedObject>1386848709575</TargetEmbeddedObject>
 					<TargetConnectableName>in</TargetConnectableName>
 					<Points>
-						<Point><X>30</X><Y>0</Y></Point>
-						<Point><X>70</X><Y>0</Y></Point>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>20</X><Y>0</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
@@ -341,23 +344,6 @@ text31.setText(manager.min);]]></StartupCode>
 					</Points>
 				</Connector>
 				<Connector>
-					<Id>1386848924058</Id>
-					<Name><![CDATA[connector7]]></Name>
-					<X>440</X><Y>450</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<SourceEmbeddedObject>1386848709575</SourceEmbeddedObject>
-					<SourceConnectableName>out</SourceConnectableName>
-					<TargetEmbeddedObject>1386848861424</TargetEmbeddedObject>
-					<TargetConnectableName>in</TargetConnectableName>
-					<Points>
-						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>30</X><Y>0</Y></Point>
-					</Points>
-				</Connector>
-				<Connector>
 					<Id>1386848931546</Id>
 					<Name><![CDATA[connector8]]></Name>
 					<X>500</X><Y>460</Y>
@@ -372,6 +358,23 @@ text31.setText(manager.min);]]></StartupCode>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
 						<Point><X>0</X><Y>20</Y></Point>
+					</Points>
+				</Connector>
+				<Connector>
+					<Id>1387905707054</Id>
+					<Name><![CDATA[connector9]]></Name>
+					<X>420</X><Y>450</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<SourceEmbeddedObject>1386848709575</SourceEmbeddedObject>
+					<SourceConnectableName>out</SourceConnectableName>
+					<TargetEmbeddedObject>1386848861424</TargetEmbeddedObject>
+					<TargetConnectableName>in</TargetConnectableName>
+					<Points>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>50</X><Y>0</Y></Point>
 					</Points>
 				</Connector>
 			</Connectors>
@@ -448,7 +451,7 @@ text31.setText(manager.min);]]></StartupCode>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[entityShape]]></Name>
-							<Value><![CDATA[]]></Value>	
+							<Value><![CDATA[message]]></Value>	
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[uniqueShape]]></Name>
@@ -508,7 +511,11 @@ text31.setText(manager.min+1);]]></Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onEnter]]></Name>
-							<Value><![CDATA[]]></Value>	
+							<Value><![CDATA[rectangle.setLineWidth(1);
+rectangle1.setLineWidth(1);
+rectangle4.setLineWidth(1);
+rectangle3.setLineWidth(1);
+rectangle2.setLineWidth(1);]]></Value>	
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[condition0]]></Name>
@@ -523,8 +530,7 @@ text31.setText(manager.min+1);]]></Value>
 							<Name><![CDATA[onExit0]]></Name>
 							<Value><![CDATA[firstUnit.addNewVirtualMachine(entity);
 text20.setText("I give you it on firshUnit");
-text21.setText(firstUnit.virtualMachines);
-]]></Value>	
+rectangle.setLineWidth(3);]]></Value>	
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[condition1]]></Name>
@@ -538,7 +544,7 @@ text21.setText(firstUnit.virtualMachines);
 							<Name><![CDATA[onExit1]]></Name>
 							<Value><![CDATA[secondUnit.addNewVirtualMachine(entity);
 text20.setText("I give you it on secondUnit");
-text19.setText(secondUnit.virtualMachines);]]></Value>	
+rectangle1.setLineWidth(3);]]></Value>	
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[condition2]]></Name>
@@ -552,7 +558,7 @@ text19.setText(secondUnit.virtualMachines);]]></Value>
 							<Name><![CDATA[onExit2]]></Name>
 							<Value><![CDATA[thirdUnit.addNewVirtualMachine(entity);
 text20.setText("I give you it on thirdUnit");
-text24.setText(thirdUnit.virtualMachines);]]></Value>	
+rectangle4.setLineWidth(3);]]></Value>	
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[condition3]]></Name>
@@ -566,7 +572,7 @@ text24.setText(thirdUnit.virtualMachines);]]></Value>
 							<Name><![CDATA[onExit3]]></Name>
 							<Value><![CDATA[fouthUnit.addNewVirtualMachine(entity);
 text20.setText("I give you it on fouthUnit");
-text23.setText(fouthUnit.virtualMachines);]]></Value>	
+rectangle3.setLineWidth(3);]]></Value>	
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[probability4]]></Name>
@@ -576,7 +582,7 @@ text23.setText(fouthUnit.virtualMachines);]]></Value>
 							<Name><![CDATA[onExitDefault]]></Name>
 							<Value><![CDATA[fifthUnit.addNewVirtualMachine(entity);
 text20.setText("I give you it on fifthUnit");
-text22.setText(fifthUnit.virtualMachines);]]></Value>	
+rectangle2.setLineWidth(3);]]></Value>	
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onExit4]]></Name>
@@ -590,7 +596,7 @@ text22.setText(fifthUnit.virtualMachines);]]></Value>
 				<EmbeddedObject>
 					<Id>1386848709575</Id>
 					<Name><![CDATA[queue]]></Name>
-					<X>390</X><Y>420</Y>
+					<X>370</X><Y>420</Y>
 					<Label><X>3</X><Y>-2</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -651,7 +657,7 @@ text22.setText(fifthUnit.virtualMachines);]]></Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[animationType]]></Name>
-							<Value><![CDATA[]]></Value>	
+							<Value><![CDATA[Animator.SINGLE]]></Value>	
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[animationForward]]></Name>
@@ -693,7 +699,9 @@ text22.setText(fifthUnit.virtualMachines);]]></Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onEnter]]></Name>
-							<Value><![CDATA[]]></Value>	
+							<Value><![CDATA[text19.setVisible(false);
+polyline2.setVisible(false);
+message.setVisible(false);]]></Value>	
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onExitTrue]]></Name>
@@ -702,10 +710,13 @@ text32.setText("It is wonderful");]]></Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onExitFalse]]></Name>
-							<Value><![CDATA[text20.setText("I cant give it to you");
+							<Value><![CDATA[text20.setText("I cant give it to you.");
 text32.setText("It is very sad");
 StopSimulation = true; 
-virtualMachinesLost.add(entity);]]></Value>	
+virtualMachinesLost.add(entity);
+text19.setVisible(true);
+polyline2.setVisible(true);
+message.setVisible(true);]]></Value>	
 						</Parameter>
 					</Parameters>
 					<CollectionType>ARRAY_LIST_BASED</CollectionType>
@@ -1581,7 +1592,7 @@ virtualMachinesLost.add(entity);]]></Value>
 				<Text>
 					<Id>1387788334973</Id>
 					<Name><![CDATA[text25]]></Name>
-					<X>740</X><Y>20</Y>
+					<X>800</X><Y>220</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1605,7 +1616,7 @@ virtualMachinesLost.add(entity);]]></Value>
 				<Text>
 					<Id>1387788372897</Id>
 					<Name><![CDATA[text31]]></Name>
-					<X>850</X><Y>20</Y>
+					<X>910</X><Y>220</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1865,6 +1876,245 @@ virtualMachinesLost.add(entity);]]></Value>
 					</ImageFiles>
 					<OriginalSize>false</OriginalSize>
 				</Image>
+				<Group>
+					<Id>1387904657337</Id>
+					<Name><![CDATA[message]]></Name>
+					<X>1070</X><Y>470</Y>
+					<Label><X>43</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<AsObject>true</AsObject>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Lock>false</Lock>
+					<ShowIn3D>false</ShowIn3D>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+
+			<Shapes>
+				<Rectangle>
+					<Id>1387904657353</Id>
+					<Name><![CDATA[_ps310]]></Name>
+					<X>-34</X><Y>-26</Y>
+					<Label><X>10</X><Y>10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<AsObject>true</AsObject>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Lock>false</Lock>
+					<ShowIn3D>false</ShowIn3D>
+					<Z>0</Z>
+					<ZHeight>10</ZHeight>
+					<LineWidth>1</LineWidth>
+					<LineColor/>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<Width>68</Width>
+					<Height>51</Height>
+					<Rotation>0.0</Rotation>
+					<FillColor>-10496</FillColor>
+					<FillMaterial>null</FillMaterial>
+				</Rectangle>
+				<Polyline>
+					<Id>1387904657355</Id>
+					<Name><![CDATA[_ps311]]></Name>
+					<X>-34</X><Y>-13</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<AsObject>true</AsObject>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Lock>false</Lock>
+					<ShowIn3D>false</ShowIn3D>
+					<Z>0</Z>
+					<ZHeight>10</ZHeight>
+					<LineWidth>1</LineWidth>
+					<LineColor/>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<BeginArrowSize>1</BeginArrowSize>
+					<BeginArrowStyle>0</BeginArrowStyle>
+					<EndArrowSize>1</EndArrowSize>
+					<EndArrowStyle>0</EndArrowStyle>
+					<FillColor>-3564522</FillColor>
+					<FillMaterial>null</FillMaterial>
+					<Points>
+					   <Point><X>0</X><Y>0</Y><Z>0</Z></Point>
+					   <Point><X>34</X><Y>34</Y><Z>0</Z></Point>
+					   <Point><X>68</X><Y>0</Y><Z>0</Z></Point>
+					   <Point><X>68</X><Y>-4</Y><Z>0</Z></Point>
+					   <Point><X>34</X><Y>21</Y><Z>0</Z></Point>
+					   <Point><X>0</X><Y>-4</Y><Z>0</Z></Point>
+					</Points>
+					<Closed>true</Closed>
+				</Polyline>
+				<Polyline>
+					<Id>1387904657368</Id>
+					<Name><![CDATA[_ps312]]></Name>
+					<X>34</X><Y>-17</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<AsObject>true</AsObject>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Lock>false</Lock>
+					<ShowIn3D>false</ShowIn3D>
+					<Z>0</Z>
+					<ZHeight>10</ZHeight>
+					<LineWidth>1</LineWidth>
+					<LineColor>-12108506</LineColor>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<BeginArrowSize>1</BeginArrowSize>
+					<BeginArrowStyle>0</BeginArrowStyle>
+					<EndArrowSize>1</EndArrowSize>
+					<EndArrowStyle>0</EndArrowStyle>
+					<FillColor/>
+					<FillMaterial>null</FillMaterial>
+					<Points>
+					   <Point><X>0</X><Y>0</Y><Z>0</Z></Point>
+					   <Point><X>-34</X><Y>26</Y><Z>0</Z></Point>
+					   <Point><X>-68</X><Y>0</Y><Z>0</Z></Point>
+					</Points>
+					<Closed>false</Closed>
+				</Polyline>
+				<Rectangle>
+					<Id>1387904657384</Id>
+					<Name><![CDATA[_ps313]]></Name>
+					<X>-34</X><Y>-26</Y>
+					<Label><X>10</X><Y>10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<AsObject>true</AsObject>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Lock>false</Lock>
+					<ShowIn3D>false</ShowIn3D>
+					<Z>0</Z>
+					<ZHeight>10</ZHeight>
+					<LineWidth>1</LineWidth>
+					<LineColor>-12108506</LineColor>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<Width>68</Width>
+					<Height>51</Height>
+					<Rotation>0.0</Rotation>
+					<FillColor>7035432</FillColor>
+					<FillMaterial>null</FillMaterial>
+				</Rectangle>
+				<Line>
+					<Id>1387904657386</Id>
+					<Name><![CDATA[_ps314]]></Name>
+					<X>-34</X><Y>21</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<AsObject>true</AsObject>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Lock>false</Lock>
+					<ShowIn3D>false</ShowIn3D>
+					<Z>0</Z>
+					<ZHeight>10</ZHeight>
+					<LineWidth>1</LineWidth>
+					<LineColor>-12108506</LineColor>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<BeginArrowSize>1</BeginArrowSize>
+					<BeginArrowStyle>0</BeginArrowStyle>
+					<EndArrowSize>1</EndArrowSize>
+					<EndArrowStyle>0</EndArrowStyle>
+					<Dx>26</Dx>
+					<Dy>-21</Dy>
+					<Dz>0</Dz>
+				</Line>
+				<Line>
+					<Id>1387904657399</Id>
+					<Name><![CDATA[_ps315]]></Name>
+					<X>34</X><Y>26</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<AsObject>true</AsObject>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Lock>false</Lock>
+					<ShowIn3D>false</ShowIn3D>
+					<Z>0</Z>
+					<ZHeight>10</ZHeight>
+					<LineWidth>1</LineWidth>
+					<LineColor>-12108506</LineColor>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<BeginArrowSize>1</BeginArrowSize>
+					<BeginArrowStyle>0</BeginArrowStyle>
+					<EndArrowSize>1</EndArrowSize>
+					<EndArrowStyle>0</EndArrowStyle>
+					<Dx>-26</Dx>
+					<Dy>-26</Dy>
+					<Dz>0</Dz>
+				</Line>
+			</Shapes>
+				</Group>
+				<Polyline>
+					<Id>1387909712162</Id>
+					<Name><![CDATA[polyline2]]></Name>
+					<X>690</X><Y>500</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<AsObject>true</AsObject>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Lock>false</Lock>
+					<ShowIn3D>false</ShowIn3D>
+					<Z>0</Z>
+					<ZHeight>10</ZHeight>
+					<LineWidth>4</LineWidth>
+					<LineColor>-16777216</LineColor>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<BeginArrowSize>1</BeginArrowSize>
+					<BeginArrowStyle>0</BeginArrowStyle>
+					<EndArrowSize>1</EndArrowSize>
+					<EndArrowStyle>0</EndArrowStyle>
+					<FillColor/>
+					<FillMaterial>null</FillMaterial>
+					<Points>
+					   <Point><X>0</X><Y>0</Y><Z>0</Z></Point>
+					   <Point><X>520</X><Y>0</Y><Z>0</Z></Point>
+					   <Point><X>480</X><Y>30</Y><Z>0</Z></Point>
+					   <Point><X>520</X><Y>0</Y><Z>0</Z></Point>
+					   <Point><X>480</X><Y>-30</Y><Z>0</Z></Point>
+					</Points>
+					<Closed>false</Closed>
+				</Polyline>
+				<Text>
+					<Id>1387909950056</Id>
+					<Name><![CDATA[text19]]></Name>
+					<X>940</X><Y>480</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<AsObject>true</AsObject>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Lock>false</Lock>
+					<ShowIn3D>false</ShowIn3D>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[To upper level]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>12</Size>
+						<Style>1</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
 			</Shapes>
 			<Controls>
 				<Control Type="Button">
@@ -1976,13 +2226,9 @@ virtualMachinesLost.add(entity);]]></Value>
 						<FillColor/>
 						<TextColor/>
 						<ActionCode><![CDATA[
-manager.remakeUnits (manager.makeParametrsArray(virtualMachinesList),unitsArray);
-manager.reconfugUnitsWithArray(unitsArray);
-text21.setText(firstUnit.vms.size());
-text19.setText(secondUnit.vms.size());
-text24.setText(thirdUnit.vms.size());
-text23.setText(fouthUnit.vms.size());
-text22.setText(fifthUnit.vms.size());
+/*manager.remakeUnits (manager.makeParametrsArray(virtualMachinesList),unitsArray);
+manager.reconfugUnitsWithArray(unitsArray);*/
+manager.simpleReconfig(unitsArray,virtualMachinesList);
 manager.findBiggestVM(unitsArray);
 minUnit = unitsArray.get(manager.min);
 text31.setText(manager.min+1);]]></ActionCode>
@@ -2760,7 +3006,7 @@ for (int i = 0;StopSimulation == false & i < 7;i++)
     			<BarChart>
 					<Id>1387785748484</Id>
 					<Name><![CDATA[chart]]></Name>
-					<X>920</X><Y>180</Y>
+					<X>750</X><Y>220</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3275,7 +3521,6 @@ public class ComputingUnit implements java.io.Serializable {
 			this.allocatedCPU = cpu;
 			this.allocatedMemory = memory;
 			this.allocatedInputOutput = io;
-			this.virtualMachines++;
 			return true;
 		}else{
 			return false;
@@ -3306,7 +3551,7 @@ public class ComputingUnit implements java.io.Serializable {
 			this.allocatedMemory = memory;
 			this.allocatedInputOutput = io;
 			this.virtualMachines++;
-			System.out.printf("%f - CPU",allocatedCPU);
+			System.out.printf("%f - CPU, %f, %f",allocatedCPU,cpu, vm.cPU);
 		}
 	}
 	
@@ -3402,6 +3647,25 @@ public class Manager implements java.io.Serializable {
 		this.rMemory = 1+ran.nextInt(31);
 		this.rIO = 1+ran.nextInt(1023);
     }
+    public void simpleReconfig(ArrayList<ComputingUnit> cus, ArrayList<VirtualMachine> vms)
+    {
+    	
+    	for (int i=0;i<cus.size();i++)
+    	{
+    		ComputingUnit cu=(ComputingUnit) cus.get(i);
+    		cu.deallocRes();
+    		for (int j =0; j<vms.size();j++)
+    		{
+    			VirtualMachine vm =(VirtualMachine) vms.get(j);
+    			if(cu.addNewVirtualMachineWithBool(vm)){
+    				vms.remove(j);
+    				j=j-1;
+    			}
+    		}
+    	}
+    	
+    }
+    
     public void findBiggestVM (ArrayList computinUnits)
     {
     	List<Float> cpuArray = new ArrayList<Float>();
